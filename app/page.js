@@ -187,7 +187,7 @@ export default function Home() {
           </p>
           <a href="#" id="inquire-cta" className="btn btn-primary">Submit Inquiry</a>
           <p className="cta-direct reveal">
-            Or write directly: <a href="mailto:inquiries@imperiumcuria.com?subject=ICC%20Inquiry">inquiries@imperiumcuria.com</a>
+            Or write directly: <a href="mailto:info@imperiumcuriacapital.com?subject=ICC%20Inquiry">info@imperiumcuriacapital.com</a>
           </p>
           <p className="cta-discipline reveal">
             ICC operates on a deal-by-deal basis. Vehicles are formed only when conviction supports it.
@@ -203,7 +203,7 @@ export default function Home() {
               <p className="footer-tag">A private co-investment platform for accredited investors and family offices.</p>
             </div>
             <div className="footer-contact">
-              <a href="mailto:inquiries@imperiumcuria.com">inquiries@imperiumcuria.com</a>
+              <a href="mailto:inquiries@imperiumcuria.com">info@imperiumcuriacapital.com</a>
               <a href="#access">Submit an inquiry</a>
             </div>
           </div>

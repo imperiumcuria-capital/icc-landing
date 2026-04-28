@@ -1,47 +1,40 @@
-‘use client’
+'use client'
 
-import { useEffect } from ‘react’
+import { useEffect } from 'react'
 
 export default function ICCClient() {
-useEffect(() => {
-// Nav scroll border
-const nav = document.getElementById(‘main-nav’)
-const onScroll = () => {
-if (window.scrollY > 8) nav?.classList.add(‘scrolled’)
-else nav?.classList.remove(‘scrolled’)
-}
-window.addEventListener(‘scroll’, onScroll, { passive: true })
-onScroll()
-
-```
-// Reveal on scroll
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (e.isIntersecting) {
-      e.target.classList.add('in')
-      io.unobserve(e.target)
+  useEffect(() => {
+    const nav = document.getElementById('main-nav')
+    const onScroll = () => {
+      if (window.scrollY > 8) nav?.classList.add('scrolled')
+      else nav?.classList.remove('scrolled')
     }
-  })
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' })
-document.querySelectorAll('.reveal').forEach((el) => io.observe(el))
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
 
-// CTA button
-const cta = document.getElementById('inquire-cta')
-if (cta) {
-  cta.addEventListener('click', (e) => {
-    e.preventDefault()
-    // TODO: replace with Tally/Typeform URL when ready
-    window.location.href = 'mailto:inquiries@imperiumcuria.com?subject=ICC%20Inquiry'
-  })
-}
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in')
+          io.unobserve(e.target)
+        }
+      })
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' })
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el))
 
-return () => {
-  window.removeEventListener('scroll', onScroll)
-  io.disconnect()
-}
-```
+    const cta = document.getElementById('inquire-cta')
+    if (cta) {
+      cta.addEventListener('click', (e) => {
+        e.preventDefault()
+        window.location.href = 'mailto:inquiries@imperiumcuria.com?subject=ICC%20Inquiry'
+      })
+    }
 
-}, [])
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      io.disconnect()
+    }
+  }, [])
 
-return null
+  return null
 }

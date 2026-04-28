@@ -26,7 +26,7 @@ export default function ICCClient() {
     if (cta) {
       cta.addEventListener('click', (e) => {
         e.preventDefault()
-        window.location.href = 'mailto:inquiries@imperiumcuria.com?subject=ICC%20Inquiry'
+        window.location.href = 'mailto:info@imperiumcuriacapital.com?subject=ICC%20Inquiry'
       })
     }
 
